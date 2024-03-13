@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% comment %} {% extends "base.html" %}
+{% block main_title %}
+    Authors
+{% endblock main_title %}
+{% block content %}
+    <h1>All Authors</h1>
+    <ul>
+        {% for name in authors %}
+            <li>
+                <a href="{% url 'author_name' name %}">{{ name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %} {% endcomment %}
+{% comment %} index.html_monthly {% endcomment %}
+{% load static %}
+{% block main_title %}
+    All Authors
+{% endblock main_title %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "authors/all_authors.css" %}">
+    <link rel="stylesheet" href="{% static "authors/includes/header.css" %}">
+{% endblock css_files %}
+{% block content %}
+    {% include "authors/includes/header.html" %}
+    <ul>
+        {% for name in authors %}
+            <li>
+                <a href="{% url 'author_name' name %}">{{ name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

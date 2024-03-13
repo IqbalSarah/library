@@ -1,0 +1,36 @@
+h1,
+h2 {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    font-weight: normal;
+    color: #cf54a6;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+/* .fallback {
+    text-align: center;
+    color: rgb(255, 255, 255);
+} */
+
+li {
+    list-style: square;
+    list-style-position: inside;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}

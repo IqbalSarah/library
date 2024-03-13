@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% comment %} {% extends "base.html" %}
+{% block main_title %}
+    {{ author_name|title }}
+{% endblock main_title %}
+{% block content %}
+    <h1>Books by {{ author_name|title }} :</h1>
+    <h2>
+        <ul>
+            {% if author_books %}
+                {% for book in author_books %}<li>{{ book }}</li>{% endfor %}
+            {% else %}
+                <li>No book has written by this author yet</li>
+            {% endif %}
+        </ul>
+    </h2>
+{% endblock content %} {% endcomment %}
+{% comment %} challenge.html {% endcomment %}
+{% load static %}
+{% block main_title %}
+    {{ author_name|title }}
+{% endblock main_title %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "authors/author.css" %}">
+    <link rel="stylesheet" href="{% static "authors/includes/header.css" %}">
+{% endblock css_files %}
+{% block content %}
+    {% include "authors/includes/header.html" %}
+    <h1>Books by {{ author_name|title }} :</h1>
+    <h2>
+        <ul>
+            {% if author_books %}
+                {% for book in author_books %}<li>{{ book }}</li>{% endfor %}
+            {% else %}
+                <h3>No book has written by this author yet</h3>
+            {% endif %}
+        </ul>
+    </h2>
+{% endblock content %}
